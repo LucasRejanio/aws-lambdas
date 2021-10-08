@@ -1,0 +1,351 @@
+[
+    {
+        "type": "rds",
+        "cluster": "qa-01",
+        "action": "stop",
+        "rds_assume_role": "staging",
+        "region": "us-east-1"
+    },
+    {
+        "service": "qa-01-moderation-check-result",
+        "cluster": "website",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-website-admin",
+        "cluster": "website",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-website",
+        "cluster": "website",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-shoryuken",
+        "cluster": "website",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-shoryuken-marketplace",
+        "cluster": "website",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-user-session",
+        "cluster": "website",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-workers",
+        "cluster": "website",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-static-home-builder",
+        "cluster": "website",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-checkout",
+        "cluster": "website",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-commands",
+        "cluster": "website",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-shipments-consumer",
+        "cluster": "enjulogistic",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-enjulogistic-webserver",
+        "cluster": "enjulogistic",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-shipment-label-jadlog",
+        "cluster": "enjulogistic",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-shipment-label-correios",
+        "cluster": "enjulogistic",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "enjusearch-qa-01",
+        "cluster": "enjusearch",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "moderation-qa-01",
+        "cluster": "moderation",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-compress-outpost-available-products",
+        "cluster": "postgres-functions",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-compress-outpost-sold-products",
+        "cluster": "postgres-functions",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-compress-product-likes",
+        "cluster": "postgres-functions",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-compress-user-available-products",
+        "cluster": "postgres-functions",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-compress-user-followers",
+        "cluster": "postgres-functions",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-compress-user-following",
+        "cluster": "postgres-functions",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-compress-user-likes",
+        "cluster": "postgres-functions",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-compress-user-products",
+        "cluster": "postgres-functions",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-compress-user-sold-products",
+        "cluster": "postgres-functions",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-refresh-integrated-invoices-summary",
+        "cluster": "postgres-functions",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-refresh-rejected-invoices-summary",
+        "cluster": "postgres-functions",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "type": "lambda",
+        "uuid": "67c60764-b7a2-45ae-ba30-846bd89e2fe5",
+        "function_name": "qa_01_components_builder",
+        "lambda_assume_role": "staging",
+        "region": "us-east-1",
+        "enabled": false
+    },
+    {
+        "type": "event",
+        "rule_name": "qa_01_auth_token_refresher",
+        "event_assume_role": "staging",
+        "region": "us-east-1",
+        "enabled": false
+    },
+    {
+        "type": "event",
+        "rule_name": "qa_01_enjurevenues_dispatcher",
+        "event_assume_role": "staging",
+        "region": "us-east-1",
+        "enabled": false
+    },
+    {
+        "type": "event",
+        "rule_name": "qa_01_notify_batches_not_sent_yet",
+        "event_assume_role": "staging",
+        "region": "us-east-1",
+        "enabled": false
+    },
+    {
+        "type": "event",
+        "rule_name": "qa_01_process_recoverable_payables",
+        "event_assume_role": "staging",
+        "region": "us-east-1",
+        "enabled": false
+    },
+    {
+        "type": "event",
+        "rule_name": "qa_01_process_stucked_bundle",
+        "event_assume_role": "staging",
+        "region": "us-east-1",
+        "enabled": false
+    },
+    {
+        "type": "event",
+        "rule_name": "qa_01_recreate_label",
+        "event_assume_role": "staging",
+        "region": "us-east-1",
+        "enabled": false
+    },
+    {
+        "type": "event",
+        "rule_name": "qa_01_send_inbox_new_sellers",
+        "event_assume_role": "staging",
+        "region": "us-east-1",
+        "enabled": false
+    },
+    {
+        "type": "event",
+        "rule_name": "qa_01_send_seller_engagement",
+        "event_assume_role": "staging",
+        "region": "us-east-1",
+        "enabled": false
+    },
+    {
+        "type": "event",
+        "rule_name": "qa_01_suspended_return_deliveries",
+        "event_assume_role": "staging",
+        "region": "us-east-1",
+        "enabled": false
+    },
+    {
+        "type": "event",
+        "rule_name": "qa_01_users_pagarme_migration",
+        "event_assume_role": "staging",
+        "region": "us-east-1",
+        "enabled": false
+    },
+    {
+        "service": "qa-01-deliver-chat-push-notifications",
+        "cluster": "website",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-deliver-chat-emails",
+        "cluster": "website",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-pix-server",
+        "cluster": "pix",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-pix-worker",
+        "cluster": "pix",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "enjuocr-qa-01",
+        "cluster": "enjuocr",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-01-kong",
+        "cluster": "kong",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 0
+    }
+]

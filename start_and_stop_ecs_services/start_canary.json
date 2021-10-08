@@ -1,0 +1,14 @@
+[
+    {
+        "service": "enju-website-canary",
+        "cluster": "website",
+        "type": "ecs",
+        "desired_count": 1
+    },
+    {
+        "service": "enju-listing-canary",
+        "cluster": "listing-api",
+        "type": "ecs",
+        "desired_count": 1
+    }
+]

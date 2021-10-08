@@ -1,0 +1,34 @@
+[
+    {
+        "service": "website-runner",
+        "cluster": "github-actions",
+        "type": "ecs",
+        "ecs_assume_role": "ci",
+        "region": "us-east-2",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-desktop-runner",
+        "cluster": "github-actions",
+        "type": "ecs",
+        "ecs_assume_role": "ci",
+        "region": "us-east-2",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-android-runner",
+        "cluster": "github-actions",
+        "type": "ecs",
+        "ecs_assume_role": "ci",
+        "region": "us-east-2",
+        "desired_count": 0
+    },
+    {
+        "service": "qa-ios-runner",
+        "cluster": "github-actions",
+        "type": "ecs",
+        "ecs_assume_role": "ci",
+        "region": "us-east-2",
+        "desired_count": 0
+    }
+]

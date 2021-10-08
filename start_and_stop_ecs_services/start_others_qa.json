@@ -1,0 +1,42 @@
+[
+    {
+        "service": "enjuphotos-qa",
+        "cluster": "enjuphotos",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 2
+    },
+    {
+        "service": "helpcenter-qa",
+        "cluster": "helpcenter",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 1
+    },
+    {
+        "service": "moderation-images-qa",
+        "cluster": "moderation",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 1
+    },
+    {
+        "service": "metabase-qa",
+        "cluster": "metabase",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 1
+    },
+    {
+        "service": "enjurevenues",
+        "cluster": "enjurevenues",
+        "type": "ecs",
+        "ecs_assume_role": "staging",
+        "region": "us-east-1",
+        "desired_count": 1
+    }
+]
