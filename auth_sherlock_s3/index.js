@@ -12,7 +12,7 @@ exports.handler = async (event, context, callback) => {
     // Configure authentication
     const authUser = 'enjoei';
     const parameter = await ssm.getParameter({
-     Name: "/enjuca/production/AUTH_ENJUCA_PASSWORD",
+     Name: "/enjuca/production/AUTH_SHERLOCK_PASSWORD",
      WithDecryption: true
     }).promise();
 
