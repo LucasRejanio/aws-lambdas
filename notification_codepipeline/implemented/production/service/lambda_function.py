@@ -5,18 +5,22 @@ import boto3
 
 
 def lambda_handler(event, context):
-    message_str = event['Records'][0]['Sns']['Message']
-    message = json.loads(message_str)
+    ## Get message in the event
+    message = json.loads(event['Records'][0]['Sns']['Message'])
 
+    # Get infos of message
     pipeline = message['detail']['pipeline']
     state = message['detail']['state']
     stage = message['detail']['stage']
 
+    ## Set actions to null
     actions = []
 
+    ## Get service name
     parameter = pipeline.split("-")
     service = parameter[1]
 
+    ## Validadtion of state deploy
     if state == "STARTED" and stage == "Source":
         state_pipeline = "Start Deploy of "
         title = state_pipeline + service
@@ -28,9 +32,10 @@ def lambda_handler(event, context):
     elif state == "FAILED":
         state_pipeline = "There was an error in the Deploy of "
         documentation = "See the documentation for troubleshooting"
-        note = "NOTE: To view the logs you need to be logged in the QA role"
+        title = state_pipeline + service + "\n" + documentation
         color = "E01E5A"
 
+        ## Creating buttons to slack request
         actions = [
             {
                 "type": "button",
@@ -44,24 +49,15 @@ def lambda_handler(event, context):
                 "url": "https://enjoei.atlassian.net/wiki/spaces/INF/pages/383845948/Deploy+CodePipeline"
             }
         ]
-
-        if stage == "Deploy" and service == "website":
-            state_pipeline = "There was an error of aplication in the Deploy of "
-            action = {
-                "type": "button",
-                "text": "Datadog",
-                "url": "https://app.datadoghq.com/logs?query=task_family%3Aenju-website-deploy&index="
-            },
-            actions = actions.append(action)
-
-        title = state_pipeline + service + "\n" + documentation + "\n" + note
     else:
         return 0
     
+    ## Formating timezone
     tz_america_sp = datetime.datetime.now(tz=pytz.timezone('America/Sao_Paulo'))
     time_now = tz_america_sp.strftime("%d-%m-%Y: %H:%M:%S")
     
-    payload_dict = {
+    ## Payload to request
+    payload = str({
         "attachments": [
             {
                 "title": title,
@@ -70,20 +66,17 @@ def lambda_handler(event, context):
                 "actions": actions
             }
         ]
-    }
+    })
 
-    payload = str(payload_dict)
-
+    ## Get paramet with slack webhooks
     client_ssm = boto3.client('ssm')
-
     parameters = client_ssm.get_parameter(
         Name='/notification/production/service/slack_urls',
         WithDecryption=True
     )
 
-    urls_str = parameters['Parameter']['Value']
-    urls = json.loads(urls_str)
-    url = urls["production"]
+    ## Get value of parameter
+    url = json.loads(parameters['Parameter']['Value'])["production"]
 
+    ## Post message in the slack
     requests.request("POST", url, data=payload)
-
