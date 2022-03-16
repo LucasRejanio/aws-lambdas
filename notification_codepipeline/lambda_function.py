@@ -67,8 +67,9 @@ def slack_messenger(pipeline, payload):
         WithDecryption=True
     )
     urls = json.loads(parameters['Parameter']['Value'])
+    url = urls[environment]
 
-    # Sending message to slack 
+    # Validating prefix in pipeline name
     places = ["0", "mercury", "venus", "earth", "mars", "next"]
     for place in places:
         if pipeline.__contains__(place):
@@ -76,9 +77,7 @@ def slack_messenger(pipeline, payload):
                 if pipeline.__contains__(key):
                     url = urls[key]
     
-    if not place in places:
-        url = urls[environment]
-    
+    # Sending message to slack 
     requests.request("POST", url, data=payload)
 
 
@@ -87,7 +86,7 @@ def lambda_handler(event, context):
     message = json.loads(event['Records'][0]['Sns']['Message'])
 
     # Getting attributes of message
-    pipeline = message['detail']['pipeline']
+    pipeline = message['detail']['pipeline'].replace("_", "-")
     state = message['detail']['state']
     stage = message['detail']['stage']
 
