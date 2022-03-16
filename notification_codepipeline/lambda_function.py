@@ -6,7 +6,7 @@ import os
 
 
 def message_formater(pipeline, state, stage):
-    # Seting collor default to button in actions
+    # Seting color default to button in actions
     style_button = "primary"
 
     # Validating the deploy state
